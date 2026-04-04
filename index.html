@@ -2,1082 +2,303 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>📅 Escala de Serviço PRO • CBMRS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🚒 Menu CBMRS</title>
   <meta name="theme-color" content="#0f4c81" />
 
   <style>
-    *{
-      box-sizing:border-box;
-      margin:0;
-      padding:0;
-      font-family:Arial, Helvetica, sans-serif;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
     }
 
-    :root{
-      --bg:#eef3f8;
-      --bg2:#dce8f5;
-      --card:#ffffff;
-      --text:#1f2937;
-      --muted:#6b7280;
-      --line:#d9e3ef;
-      --primary:#0f4c81;
-      --primary-dark:#0b365b;
-      --green:#16a34a;
-      --green-soft:#dcfce7;
-      --blue-soft:#dbeafe;
-      --yellow:#f59e0b;
-      --yellow-soft:#fef3c7;
-      --red:#dc2626;
-      --red-soft:#fee2e2;
-      --purple:#7c3aed;
-      --purple-soft:#ede9fe;
-      --cyan:#0891b2;
-      --cyan-soft:#cffafe;
-      --orange:#ea580c;
-      --orange-soft:#ffedd5;
-      --shadow:0 10px 30px rgba(0,0,0,.10);
-      --radius:22px;
+    body {
+      background: linear-gradient(135deg, #eaf2fb, #d8e7f7);
+      color: #1f2937;
+      min-height: 100vh;
+      padding: 24px;
     }
 
-    body{
-      background:linear-gradient(180deg, var(--bg2) 0%, var(--bg) 100%);
-      color:var(--text);
-      padding:14px;
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
     }
 
-    .app{
-      max-width:1150px;
-      margin:0 auto;
+    .topo {
+      background: #ffffff;
+      border-radius: 22px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      padding: 28px 22px;
+      margin-bottom: 24px;
+      text-align: center;
     }
 
-    .hero{
-      background:linear-gradient(135deg, var(--primary), var(--primary-dark));
-      color:#fff;
-      border-radius:28px;
-      padding:22px 18px;
-      box-shadow:var(--shadow);
-      margin-bottom:16px;
+    .topo h1 {
+      color: #0f4c81;
+      font-size: 2rem;
+      margin-bottom: 8px;
     }
 
-    .hero h1{
-      text-align:center;
-      font-size:1.75rem;
-      line-height:1.2;
-      margin-bottom:8px;
+    .topo h2 {
+      font-size: 1.1rem;
+      font-weight: normal;
+      color: #5b6b7b;
+      margin-bottom: 10px;
     }
 
-    .hero .sub{
-      text-align:center;
-      font-size:.98rem;
-      opacity:.96;
-      line-height:1.45;
+    .topo p {
+      color: #6b7280;
+      font-size: 0.98rem;
+      line-height: 1.5;
+      max-width: 750px;
+      margin: 0 auto;
     }
 
-    .panel{
-      background:var(--card);
-      border-radius:var(--radius);
-      box-shadow:var(--shadow);
-      padding:14px;
-      margin-bottom:14px;
-      border:1px solid var(--line);
+    .info-bar {
+      margin-top: 16px;
+      display: inline-block;
+      background: #edf6ff;
+      color: #0f4c81;
+      border: 1px solid #cfe4ff;
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      font-weight: bold;
     }
 
-    .import-panel{
-      background:linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 20px;
     }
 
-    .section-title{
-      font-size:1rem;
-      font-weight:900;
-      color:var(--primary);
-      margin-bottom:10px;
+    .card {
+      background: #ffffff;
+      border-radius: 22px;
+      padding: 24px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 280px;
+      border-top: 6px solid #0f4c81;
     }
 
-    .import-grid{
-      display:grid;
-      grid-template-columns:1.3fr .9fr .9fr;
-      gap:10px;
-      align-items:end;
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 36px rgba(0,0,0,0.12);
     }
 
-    .field{
-      display:flex;
-      flex-direction:column;
-      gap:6px;
+    .icon {
+      font-size: 2.4rem;
+      margin-bottom: 14px;
     }
 
-    label{
-      font-size:.9rem;
-      color:var(--muted);
-      font-weight:800;
+    .card h3 {
+      color: #0f4c81;
+      font-size: 1.4rem;
+      margin-bottom: 10px;
     }
 
-    input[type="text"],
-    input[type="file"],
-    select{
-      width:100%;
-      padding:12px 13px;
-      border-radius:14px;
-      border:1px solid #cbd5e1;
-      outline:none;
-      font-size:1rem;
-      background:#fff;
+    .card p {
+      color: #4b5563;
+      line-height: 1.6;
+      font-size: 0.98rem;
+      margin-bottom: 18px;
     }
 
-    input:focus, select:focus{
-      border-color:var(--primary);
-      box-shadow:0 0 0 3px rgba(15,76,129,.10);
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 18px;
     }
 
-    .hint{
-      margin-top:10px;
-      font-size:.88rem;
-      color:#475569;
-      line-height:1.5;
-      background:#f8fafc;
-      border:1px solid #e2e8f0;
-      border-radius:14px;
-      padding:10px 12px;
+    .tag {
+      background: #eef4fb;
+      color: #234;
+      padding: 7px 12px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: bold;
     }
 
-    .date-area{
-      text-align:center;
-      margin-bottom:12px;
+    .acoes {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: auto;
     }
 
-    .date-area .week{
-      color:var(--primary);
-      font-weight:900;
-      font-size:1.3rem;
-      letter-spacing:.3px;
+    .btn {
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      padding: 12px 16px;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      font-weight: bold;
+      transition: 0.2s ease;
+      text-align: center;
+      display: inline-block;
     }
 
-    .date-area .date{
-      color:var(--muted);
-      font-weight:800;
-      font-size:1rem;
-      margin-top:6px;
+    .btn-primary {
+      background: #0f4c81;
+      color: white;
     }
 
-    .controls{
-      display:grid;
-      grid-template-columns:1fr 1fr 1fr;
-      gap:10px;
-      margin-bottom:12px;
+    .btn-primary:hover {
+      background: #0b3b64;
     }
 
-    button{
-      border:none;
-      border-radius:16px;
-      padding:14px 12px;
-      font-weight:900;
-      font-size:.96rem;
-      cursor:pointer;
-      box-shadow:0 4px 12px rgba(0,0,0,.08);
-      transition:.18s ease;
+    .bloco-extra {
+      margin-top: 26px;
+      background: #ffffff;
+      border-radius: 22px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      padding: 24px;
     }
 
-    button:hover{
-      transform:translateY(-1px);
-      filter:brightness(.98);
+    .bloco-extra h3 {
+      color: #0f4c81;
+      margin-bottom: 14px;
+      font-size: 1.2rem;
     }
 
-    .btn-prev{ background:var(--blue-soft); color:#1d4ed8; }
-    .btn-today{ background:var(--yellow-soft); color:#b45309; }
-    .btn-next{ background:var(--green-soft); color:#15803d; }
-    .btn-import{ background:var(--green-soft); color:#166534; }
-    .btn-sample{ background:var(--blue-soft); color:#1e3a8a; }
-    .btn-reset{ background:var(--red-soft); color:#991b1b; }
-
-    .filters{
-      display:grid;
-      grid-template-columns:1.2fr 1fr;
-      gap:10px;
+    .lista {
+      display: grid;
+      gap: 10px;
     }
 
-    .stats{
-      display:grid;
-      grid-template-columns:repeat(4, 1fr);
-      gap:10px;
-      margin-bottom:14px;
+    .item-lista {
+      background: #f8fbff;
+      border-left: 5px solid #0f4c81;
+      padding: 12px 14px;
+      border-radius: 12px;
+      color: #374151;
+      line-height: 1.5;
     }
 
-    .stat{
-      border-radius:18px;
-      padding:14px 10px;
-      text-align:center;
-      color:#fff;
-      box-shadow:var(--shadow);
+    .rodape {
+      text-align: center;
+      color: #6b7280;
+      font-size: 0.92rem;
+      padding: 22px 10px 6px;
     }
 
-    .stat .n{
-      font-size:1.45rem;
-      font-weight:900;
-      line-height:1;
-      margin-bottom:6px;
-    }
-
-    .stat .t{
-      font-size:.85rem;
-      font-weight:800;
-      opacity:.98;
-    }
-
-    .s1{ background:linear-gradient(135deg, #0f4c81, #2563eb); }
-    .s2{ background:linear-gradient(135deg, #16a34a, #22c55e); }
-    .s3{ background:linear-gradient(135deg, #dc2626, #ef4444); }
-    .s4{ background:linear-gradient(135deg, #7c3aed, #8b5cf6); }
-
-    .legend{
-      display:grid;
-      grid-template-columns:repeat(6, 1fr);
-      gap:8px;
-      margin-bottom:14px;
-    }
-
-    .tag{
-      color:#fff;
-      text-align:center;
-      padding:10px 8px;
-      border-radius:12px;
-      font-weight:900;
-      font-size:.85rem;
-    }
-
-    .cg{ background:var(--primary); }
-    .cov{ background:var(--purple); }
-    .cld{ background:var(--red); }
-    .cle{ background:var(--yellow); color:#222; }
-    .cobom{ background:var(--cyan); }
-    .exp{ background:var(--green); }
-
-    .cards{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:12px;
-      margin-bottom:14px;
-    }
-
-    .card{
-      background:var(--card);
-      border-radius:20px;
-      box-shadow:var(--shadow);
-      padding:14px;
-      border:1px solid var(--line);
-    }
-
-    .card-head{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-      margin-bottom:12px;
-    }
-
-    .card-head h3{
-      font-size:1.06rem;
-      font-weight:900;
-    }
-
-    .chip{
-      color:#fff;
-      font-size:.8rem;
-      font-weight:900;
-      padding:7px 10px;
-      border-radius:999px;
-      white-space:nowrap;
-    }
-
-    .chip.cg{ background:var(--primary); }
-    .chip.cov{ background:var(--purple); }
-    .chip.cld{ background:var(--red); }
-    .chip.cle{ background:var(--yellow); color:#222; }
-    .chip.cobom{ background:var(--cyan); }
-    .chip.exp{ background:var(--green); }
-
-    .turnos{
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-    }
-
-    .turno{
-      border:1px solid #e2e8f0;
-      background:#f8fafc;
-      border-radius:16px;
-      padding:12px;
-    }
-
-    .turno-top{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:10px;
-      margin-bottom:8px;
-      flex-wrap:wrap;
-    }
-
-    .turno-label{
-      font-weight:900;
-      font-size:.92rem;
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-    }
-
-    .carga{
-      font-size:.82rem;
-      font-weight:900;
-      padding:7px 10px;
-      border-radius:999px;
-      background:#e2e8f0;
-      color:#334155;
-    }
-
-    .carga.dia{
-      background:var(--yellow-soft);
-      color:#92400e;
-    }
-
-    .carga.noite{
-      background:#dbeafe;
-      color:#1e3a8a;
-    }
-
-    .carga.adm{
-      background:var(--green-soft);
-      color:#166534;
-    }
-
-    .turno-main{
-      display:grid;
-      grid-template-columns:1.3fr auto;
-      gap:10px;
-      align-items:center;
-    }
-
-    .nome{
-      background:#fff;
-      border:1px solid #e2e8f0;
-      border-radius:14px;
-      padding:12px;
-      font-weight:900;
-      line-height:1.35;
-      min-height:48px;
-      display:flex;
-      align-items:center;
-    }
-
-    .obs-line{
-      padding:10px 12px;
-      border-radius:14px;
-      background:var(--orange-soft);
-      color:#9a3412;
-      border:1px solid #fdba74;
-      font-size:.85rem;
-      font-weight:900;
-      text-align:center;
-      min-width:120px;
-    }
-
-    .highlight{
-      background:#fff7ed !important;
-      border:2px solid #fb923c !important;
-      color:#9a3412;
-    }
-
-    .warn-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:12px;
-      margin-bottom:14px;
-    }
-
-    .warn-box{
-      background:var(--card);
-      border-radius:20px;
-      box-shadow:var(--shadow);
-      padding:14px;
-      border:1px solid var(--line);
-    }
-
-    .badges{
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-    }
-
-    .badge{
-      border-radius:999px;
-      padding:9px 12px;
-      font-size:.88rem;
-      font-weight:900;
-      background:#f8fafc;
-      border:1px solid #e2e8f0;
-    }
-
-    .badge.red{ background:var(--red-soft); border-color:#fecaca; color:#991b1b; }
-    .badge.yellow{ background:var(--yellow-soft); border-color:#fde68a; color:#92400e; }
-    .badge.green{ background:var(--green-soft); border-color:#bbf7d0; color:#166534; }
-    .badge.blue{ background:var(--blue-soft); border-color:#bfdbfe; color:#1e3a8a; }
-    .badge.purple{ background:var(--purple-soft); border-color:#ddd6fe; color:#5b21b6; }
-
-    .obs{
-      background:#f8fafc;
-      border-radius:16px;
-      border:1px solid #e2e8f0;
-      padding:12px;
-      line-height:1.5;
-      font-weight:800;
-      color:#334155;
-    }
-
-    .log-box{
-      background:#0b1220;
-      color:#dbeafe;
-      border-radius:16px;
-      padding:12px;
-      font-size:.88rem;
-      line-height:1.55;
-      white-space:pre-wrap;
-      min-height:100px;
-      font-family: Consolas, monospace;
-    }
-
-    .footer{
-      text-align:center;
-      color:var(--muted);
-      font-size:.9rem;
-      padding:8px 0 14px;
-    }
-
-    @media (max-width: 950px){
-      .cards,
-      .warn-grid,
-      .filters,
-      .import-grid{
-        grid-template-columns:1fr;
+    @media (max-width: 700px) {
+      body {
+        padding: 14px;
       }
 
-      .legend{
-        grid-template-columns:repeat(3, 1fr);
+      .topo h1 {
+        font-size: 1.6rem;
       }
 
-      .stats{
-        grid-template-columns:repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 680px){
-      .controls{
-        grid-template-columns:1fr;
+      .topo h2 {
+        font-size: 1rem;
       }
 
-      .cards{
-        grid-template-columns:1fr;
+      .card {
+        min-height: auto;
       }
 
-      .legend{
-        grid-template-columns:repeat(2, 1fr);
+      .acoes {
+        flex-direction: column;
       }
 
-      .hero h1{
-        font-size:1.35rem;
-      }
-
-      .turno-main{
-        grid-template-columns:1fr;
-      }
-
-      .obs-line{
-        width:100%;
+      .btn {
+        width: 100%;
       }
     }
   </style>
 </head>
 <body>
-  <div class="app">
-    <div class="hero">
-      <h1>🚒 CB São Lourenço do Sul<br>📅 Escala de Serviço PRO</h1>
-      <div class="sub">
-        Consulta diária da escala • importação de PDF • turnos com carga horária • observações por linha
-      </div>
+  <div class="container">
+
+    <div class="topo">
+      <h1>🚒 PAINEL CBSLS</h1>
+      <h2>📋 Menu Principal de Sistemas</h2>
+      <p>
+        Acesso rápido aos sistemas já publicados. Utilize este menu para abrir de forma mais fácil
+        o <strong>Help Desk SLS</strong> e o <strong>Controle Numérico</strong> em um único local.
+      </p>
+      <div class="info-bar">✅ Menu centralizado • ✅ Acesso rápido</div>
     </div>
 
-    <div class="panel import-panel">
-      <div class="section-title">📥 Importar PDF da escala</div>
+    <div class="grid">
 
-      <div class="import-grid">
-        <div class="field">
-          <label for="pdfFile">Selecionar PDF</label>
-          <input id="pdfFile" type="file" accept="application/pdf" />
-        </div>
+      <div class="card">
+        <div>
+          <div class="icon">🛠️</div>
+          <h3>Help Desk SLS</h3>
+          <p>
+            Sistema para abertura de Chamados de Manutenção,
+            Local onde podemos "Anotar" situações que necessitam de reparos.
+          </p>
 
-        <div class="field">
-          <label>&nbsp;</label>
-          <button class="btn-import" onclick="importarPDF()">Converter PDF para sistema</button>
-        </div>
-
-        <div class="field">
-          <label>&nbsp;</label>
-          <button class="btn-reset" onclick="restaurarEscalaPadrao()">Restaurar escala padrão</button>
-        </div>
-      </div>
-
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:10px;">
-        <button class="btn-sample" onclick="carregarExemploImportado()">Carregar exemplo já convertido</button>
-        <button class="btn-sample" onclick="baixarJSONEscala()">Baixar JSON da escala atual</button>
-      </div>
-
-      <div class="hint">
-        O importador lê o texto do PDF e tenta montar a semana automaticamente. Funciona melhor com PDF que tenha texto selecionável.  
-        Se o PDF for imagem escaneada, a conversão pode não ficar completa.
-      </div>
-    </div>
-
-    <div class="panel">
-      <div class="date-area">
-        <div class="week" id="weekDay">SEGUNDA-FEIRA</div>
-        <div class="date" id="dateLabel">23/03/2026</div>
-      </div>
-
-      <div class="controls">
-        <button class="btn-prev" onclick="anteriorDia()">⬅ Dia anterior</button>
-        <button class="btn-today" onclick="irParaHojeEscala()">📍 Hoje</button>
-        <button class="btn-next" onclick="proximoDia()">Próximo dia ➡</button>
-      </div>
-
-      <div class="filters">
-        <div class="field">
-          <label for="buscaNome">🔎 Buscar militar pelo nome</label>
-          <input id="buscaNome" type="text" placeholder="Ex.: BORGES, BATISTA, MAX..." oninput="renderizar()" />
-        </div>
-
-        <div class="field">
-          <label for="selectDia">📅 Ir direto para o dia</label>
-          <select id="selectDia" onchange="trocarDia()"></select>
-        </div>
-      </div>
-    </div>
-
-    <div class="stats">
-      <div class="stat s1">
-        <div class="n" id="statFuncoes">0</div>
-        <div class="t">Funções no dia</div>
-      </div>
-      <div class="stat s2">
-        <div class="n" id="statNomes">0</div>
-        <div class="t">Militares exibidos</div>
-      </div>
-      <div class="stat s3">
-        <div class="n" id="statBusca">0</div>
-        <div class="t">Resultados da busca</div>
-      </div>
-      <div class="stat s4">
-        <div class="n" id="statHoras">0h</div>
-        <div class="t">Carga do quadro</div>
-      </div>
-    </div>
-
-    <div class="legend">
-      <div class="tag cg">CG</div>
-      <div class="tag cov">COV</div>
-      <div class="tag cld">CLD</div>
-      <div class="tag cle">CLE</div>
-      <div class="tag cobom">COBOM</div>
-      <div class="tag exp">EXP. ADM</div>
-    </div>
-
-    <div class="cards" id="cardsEscala"></div>
-
-    <div class="warn-grid">
-      <div class="warn-box">
-        <div class="section-title">🚫 Indisponíveis</div>
-        <div class="badges" id="listaIndisponiveis"></div>
-      </div>
-
-      <div class="warn-box">
-        <div class="section-title">📝 Observações</div>
-        <div class="obs" id="observacoesBox"></div>
-      </div>
-    </div>
-
-    <div class="panel">
-      <div class="section-title">🧾 Log da importação</div>
-      <div id="logImportacao" class="log-box">Aguardando importação do PDF...</div>
-    </div>
-
-    <div class="footer">
-      Sistema visual da escala semanal • pronto para GitHub Pages
-    </div>
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@4.4.168/build/pdf.min.mjs" type="module"></script>
-
-  <script type="module">
-    import * as pdfjsLib from "https://cdn.jsdelivr.net/npm/pdfjs-dist@4.4.168/build/pdf.min.mjs";
-
-    pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdn.jsdelivr.net/npm/pdfjs-dist@4.4.168/build/pdf.worker.min.mjs";
-
-    window.pdfjsLib = pdfjsLib;
-  </script>
-
-  <script>
-    const escalaPadrao = [
-      {
-        data: "23/03/2026",
-        dia: "SEGUNDA-FEIRA",
-        funcoes: [
-          { sigla: "CG", classe: "cg", linhas: [
-            { turno: "12h dia", icone: "☀️", carga: "12h", nome: "1º SGT BM BATISTA", obs: "" },
-            { turno: "12h noite", icone: "🌙", carga: "12h", nome: "1º SGT BM BATISTA", obs: "" }
-          ]},
-          { sigla: "COV", classe: "cov", linhas: [
-            { turno: "12h dia", icone: "☀️", carga: "12h", nome: "2º SGT BM LISCANO", obs: "" },
-            { turno: "12h noite", icone: "🌙", carga: "12h", nome: "2º SGT BM LISCANO", obs: "" }
-          ]},
-          { sigla: "CLD", classe: "cld", linhas: [
-            { turno: "12h dia", icone: "☀️", carga: "12h", nome: "SD BM TOMASCHEWSKI", obs: "" },
-            { turno: "12h noite", icone: "🌙", carga: "12h", nome: "SD BM TOMASCHEWSKI", obs: "" }
-          ]},
-          { sigla: "CLE", classe: "cle", linhas: [
-            { turno: "12h dia", icone: "☀️", carga: "12h", nome: "SD BM ISQUIERDO", obs: "" },
-            { turno: "12h noite", icone: "🌙", carga: "12h", nome: "SD BM ISQUIERDO", obs: "" }
-          ]},
-          { sigla: "COBOM", classe: "cobom", linhas: [
-            { turno: "12h dia", icone: "☀️", carga: "12h", nome: "SD BM BORGES", obs: "" },
-            { turno: "12h noite", icone: "🌙", carga: "12h", nome: "SD BM BORGES", obs: "" }
-          ]},
-          { sigla: "EXP. ADM", classe: "exp", linhas: [
-            { turno: "Administrativo", icone: "🗂️", carga: "6h", nome: "1º SGT DIEFERSON", obs: "Expediente" }
-          ]}
-        ]
-      }
-    ];
-
-    let escala = JSON.parse(JSON.stringify(escalaPadrao));
-
-    const indisponiveis = [
-      { nome: "2º SGT BM ANDRE", tipo: "LAA", cor: "yellow" },
-      { nome: "SD BM BATISTA", tipo: "FÉRIAS", cor: "red" },
-      { nome: "1º SGT BM VICENTE", tipo: "OP VERÃO", cor: "blue" },
-      { nome: "1º TEN BM MARCELO", tipo: "LFC", cor: "purple" },
-      { nome: "1º SGT BM JASSON", tipo: "OP VERÃO", cor: "green" }
-    ];
-
-    const observacoesFixas = [
-      "1ª linha da função = 12h dia.",
-      "2ª linha da função = 12h noite.",
-      "Expediente administrativo aparece com 6h nos dias úteis.",
-      "PDF com texto selecionável converte melhor que PDF escaneado."
-    ];
-
-    const FUNCOES_ORDEM = ["CG", "COV", "CLD", "CLE", "COBOM"];
-    const CLASSES_FUNCAO = {
-      "CG": "cg",
-      "COV": "cov",
-      "CLD": "cld",
-      "CLE": "cle",
-      "COBOM": "cobom",
-      "EXP. ADM": "exp"
-    };
-
-    let indiceAtual = 0;
-
-    const weekDay = document.getElementById("weekDay");
-    const dateLabel = document.getElementById("dateLabel");
-    const selectDia = document.getElementById("selectDia");
-    const buscaNome = document.getElementById("buscaNome");
-    const cardsEscala = document.getElementById("cardsEscala");
-    const listaIndisponiveis = document.getElementById("listaIndisponiveis");
-    const observacoesBox = document.getElementById("observacoesBox");
-    const logImportacao = document.getElementById("logImportacao");
-
-    const statFuncoes = document.getElementById("statFuncoes");
-    const statNomes = document.getElementById("statNomes");
-    const statBusca = document.getElementById("statBusca");
-    const statHoras = document.getElementById("statHoras");
-
-    function log(msg) {
-      logImportacao.textContent = msg;
-    }
-
-    function montarSeletor() {
-      selectDia.innerHTML = "";
-      escala.forEach((item, i) => {
-        const opt = document.createElement("option");
-        opt.value = i;
-        opt.textContent = `${item.data} • ${item.dia}`;
-        selectDia.appendChild(opt);
-      });
-    }
-
-    function normalizar(txt) {
-      return (txt || "")
-        .toUpperCase()
-        .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "");
-    }
-
-    function renderizarIndisponiveis() {
-      listaIndisponiveis.innerHTML = "";
-      indisponiveis.forEach(item => {
-        const span = document.createElement("div");
-        span.className = `badge ${item.cor}`;
-        span.textContent = `${item.tipo} • ${item.nome}`;
-        listaIndisponiveis.appendChild(span);
-      });
-    }
-
-    function renderizarObservacoes() {
-      observacoesBox.innerHTML = observacoesFixas.map(x => `• ${x}`).join("<br><br>");
-    }
-
-    function classeCarga(turno) {
-      if (turno === "Administrativo") return "adm";
-      if (turno.includes("noite")) return "noite";
-      return "dia";
-    }
-
-    function renderizar() {
-      if (!escala.length) return;
-
-      const dia = escala[indiceAtual];
-      const busca = normalizar(buscaNome.value);
-
-      weekDay.textContent = dia.dia;
-      dateLabel.textContent = dia.data;
-      selectDia.value = indiceAtual;
-
-      cardsEscala.innerHTML = "";
-
-      let totalFuncoes = dia.funcoes.length;
-      let totalNomes = 0;
-      let totalResultadosBusca = 0;
-      let somaHoras = 0;
-
-      dia.funcoes.forEach(funcao => {
-        const card = document.createElement("div");
-        card.className = "card";
-
-        let turnosHtml = `<div class="turnos">`;
-
-        funcao.linhas.forEach(linha => {
-          const nomeTexto = linha.nome || "—";
-          const obsTexto = linha.obs || "";
-          const bateBusca = busca && normalizar(nomeTexto).includes(busca);
-
-          if (nomeTexto !== "—" && nomeTexto !== "Sem expediente") {
-            totalNomes++;
-          }
-
-          if (bateBusca) totalResultadosBusca++;
-
-          const horasNumericas = parseInt((linha.carga || "0").replace("h", ""), 10);
-          if (!isNaN(horasNumericas)) somaHoras += horasNumericas;
-
-          turnosHtml += `
-            <div class="turno">
-              <div class="turno-top">
-                <div class="turno-label">${linha.icone} ${linha.turno}</div>
-                <div class="carga ${classeCarga(linha.turno)}">${linha.carga}</div>
-              </div>
-
-              <div class="turno-main">
-                <div class="nome ${bateBusca ? 'highlight' : ''}">${nomeTexto}</div>
-                ${obsTexto ? `<div class="obs-line">${obsTexto}</div>` : ``}
-              </div>
-            </div>
-          `;
-        });
-
-        turnosHtml += `</div>`;
-
-        card.innerHTML = `
-          <div class="card-head">
-            <h3>👨‍🚒 ${funcao.sigla}</h3>
-            <span class="chip ${funcao.classe}">${funcao.sigla}</span>
+          <div class="tags">
+            <span class="tag">No Quartel</span>
+            <span class="tag">Nas VTR's</span>
+            <span class="tag">Aquisições</span>
+            <span class="tag">Sugestões</span>
           </div>
-          ${turnosHtml}
-        `;
+        </div>
 
-        cardsEscala.appendChild(card);
-      });
+        <div class="acoes">
+          <a class="btn btn-primary" href="https://helpdesksls.github.io/Help-Desk-SLS/" target="_blank" rel="noopener noreferrer">
+            Abrir Help Desk
+          </a>
+        </div>
+      </div>
 
-      statFuncoes.textContent = totalFuncoes;
-      statNomes.textContent = totalNomes;
-      statBusca.textContent = busca ? totalResultadosBusca : 0;
-      statHoras.textContent = `${somaHoras}h`;
-    }
+      <div class="card">
+        <div>
+          <div class="icon">🔢</div>
+          <h3>Controle Numérico</h3>
+          <p>
+            Sistema para controle de numeração usada em respostas de mensagens.
+          </p>
 
-    function proximoDia() {
-      indiceAtual++;
-      if (indiceAtual >= escala.length) indiceAtual = 0;
-      renderizar();
-    }
+          <div class="tags">
+            <span class="tag">Mensagem Expressa</span>
+            <span class="tag">Partes</span>
+            <span class="tag">Nota para BI</span>
+            <span class="tag">Outros</span>
+          </div>
+        </div>
 
-    function anteriorDia() {
-      indiceAtual--;
-      if (indiceAtual < 0) indiceAtual = escala.length - 1;
-      renderizar();
-    }
+        <div class="acoes">
+          <a class="btn btn-primary" href="https://controle-numerico.github.io/controle-numerico/" target="_blank" rel="noopener noreferrer">
+            Abrir Controle Numérico
+          </a>
+        </div>
+      </div>
 
-    function trocarDia() {
-      indiceAtual = Number(selectDia.value);
-      renderizar();
-    }
+    </div>
 
-    function irParaHojeEscala() {
-      const hoje = new Date();
-      const dd = String(hoje.getDate()).padStart(2, "0");
-      const mm = String(hoje.getMonth() + 1).padStart(2, "0");
-      const yyyy = hoje.getFullYear();
-      const hojeStr = `${dd}/${mm}/${yyyy}`;
+    <div class="bloco-extra">
+      <h3>📌 Informações deste menu</h3>
+      <div class="lista">
+        <div class="item-lista">
+          <strong>Help Desk SLS:</strong>
+          abre diretamente o sistema de Chamados.
+        </div>
 
-      const indice = escala.findIndex(item => item.data === hojeStr);
+        <div class="item-lista">
+          <strong>Controle Numérico:</strong>
+          abre diretamente o sistema de Controle de Numeração.
+        </div>
 
-      if (indice >= 0) {
-        indiceAtual = indice;
-      } else {
-        alert("A data de hoje não está dentro desta escala cadastrada.");
-      }
+       
+    <div class="rodape">
+      Desenvolvido para acesso rápido aos sistemas internos 🚒
+    </div>
 
-      renderizar();
-    }
-
-    function classePorFuncao(sigla) {
-      return CLASSES_FUNCAO[sigla] || "cg";
-    }
-
-    function parseDatas(texto) {
-      const matches = [...texto.matchAll(/\b(\d{1,2}\/\d{1,2}\/\d{4})\b/g)].map(m => m[1]);
-      const unicas = [...new Set(matches)];
-      return unicas.slice(0, 7);
-    }
-
-    function parseDiasSemana(texto) {
-      const dias = [];
-      const padrao = /(SEGUNDA-FEIRA|TERÇA-FEIRA|QUARTA-FEIRA|QUINTA-FEIRA|SEXTA-FEIRA|SÁBADO|DOMINGO)/gi;
-      let m;
-      while ((m = padrao.exec(texto)) !== null) {
-        dias.push(m[1].toUpperCase());
-      }
-      return [...new Set(dias)].slice(0, 7);
-    }
-
-    function extrairBlocoNomes(texto) {
-      const regex = /\b(?:1º TEN BM|1º SGT BM|2º SGT BM|SD BM|SD TEMP)\s+[A-ZÇÁÉÍÓÚÂÊÔÃÕÜ]+(?:\s+[A-ZÇÁÉÍÓÚÂÊÔÃÕÜ]+)*/g;
-      return (texto.match(regex) || []).map(x => x.trim());
-    }
-
-    function dividirEm7Dias(lista) {
-      const dias = [[], [], [], [], [], [], []];
-      if (!lista.length) return dias;
-
-      const porDia = Math.ceil(lista.length / 7);
-
-      for (let i = 0; i < 7; i++) {
-        dias[i] = lista.slice(i * porDia, (i + 1) * porDia);
-      }
-
-      return dias;
-    }
-
-    function montarEscalaBasicaDeTexto(texto) {
-      const datas = parseDatas(texto);
-      const diasSemana = parseDiasSemana(texto);
-
-      const nomes = extrairBlocoNomes(texto);
-
-      if (!datas.length || !diasSemana.length || !nomes.length) {
-        throw new Error("Não foi possível identificar datas, dias ou nomes suficientes no PDF.");
-      }
-
-      const nomesPorDia = dividirEm7Dias(nomes);
-
-      const resultado = [];
-      for (let i = 0; i < Math.min(7, datas.length, diasSemana.length); i++) {
-        const listaDia = nomesPorDia[i] || [];
-
-        const funcoes = [];
-        let cursor = 0;
-
-        FUNCOES_ORDEM.forEach(sigla => {
-          const nomeDia = listaDia[cursor] || "—";
-          const nomeNoite = listaDia[cursor + 1] || nomeDia || "—";
-          cursor += 2;
-
-          funcoes.push({
-            sigla,
-            classe: classePorFuncao(sigla),
-            linhas: [
-              { turno: "12h dia", icone: "☀️", carga: "12h", nome: nomeDia, obs: "" },
-              { turno: "12h noite", icone: "🌙", carga: "12h", nome: nomeNoite, obs: "" }
-            ]
-          });
-        });
-
-        funcoes.push({
-          sigla: "EXP. ADM",
-          classe: "exp",
-          linhas: [
-            {
-              turno: "Administrativo",
-              icone: "🗂️",
-              carga: ["SÁBADO", "DOMINGO"].includes(diasSemana[i]) ? "0h" : "6h",
-              nome: ["SÁBADO", "DOMINGO"].includes(diasSemana[i]) ? "Sem expediente" : "Expediente Administrativo",
-              obs: ["SÁBADO", "DOMINGO"].includes(diasSemana[i]) ? "Final de semana" : "Importado do PDF"
-            }
-          ]
-        });
-
-        resultado.push({
-          data: datas[i],
-          dia: diasSemana[i],
-          funcoes
-        });
-      }
-
-      return resultado;
-    }
-
-    async function lerTextoPDF(file) {
-      const arrayBuffer = await file.arrayBuffer();
-      const pdf = await window.pdfjsLib.getDocument({ data: arrayBuffer }).promise;
-
-      let textoCompleto = "";
-
-      for (let i = 1; i <= pdf.numPages; i++) {
-        const page = await pdf.getPage(i);
-        const content = await page.getTextContent();
-        const strings = content.items.map(item => item.str);
-        textoCompleto += "\n\n--- PAGINA " + i + " ---\n" + strings.join(" ");
-      }
-
-      return textoCompleto;
-    }
-
-    async function importarPDF() {
-      const fileInput = document.getElementById("pdfFile");
-      const file = fileInput.files[0];
-
-      if (!file) {
-        alert("Selecione um arquivo PDF primeiro.");
-        return;
-      }
-
-      if (!window.pdfjsLib) {
-        alert("Biblioteca do PDF ainda não carregou. Aguarde alguns segundos e tente novamente.");
-        return;
-      }
-
-      try {
-        log("Lendo PDF...\n");
-        const texto = await lerTextoPDF(file);
-
-        log(
-          "PDF lido com sucesso.\n\n" +
-          "Prévia dos primeiros caracteres:\n\n" +
-          texto.slice(0, 2500)
-        );
-
-        const novaEscala = montarEscalaBasicaDeTexto(texto);
-
-        if (!novaEscala.length) {
-          throw new Error("A importação não conseguiu montar dias válidos.");
-        }
-
-        escala = novaEscala;
-        indiceAtual = 0;
-        montarSeletor();
-        renderizar();
-
-        log(
-          "Importação concluída com sucesso.\n\n" +
-          `Dias identificados: ${novaEscala.length}\n` +
-          `Primeiro dia: ${novaEscala[0].data} - ${novaEscala[0].dia}\n\n` +
-          "A escala foi convertida para o sistema."
-        );
-
-        alert("PDF importado e convertido com sucesso.");
-      } catch (erro) {
-        console.error(erro);
-        log("Erro na importação:\n\n" + erro.message);
-        alert("Não foi possível converter este PDF automaticamente. Pode ser necessário ajustar o modelo do importador.");
-      }
-    }
-
-    function restaurarEscalaPadrao() {
-      escala = JSON.parse(JSON.stringify(escalaPadrao));
-      indiceAtual = 0;
-      montarSeletor();
-      renderizar();
-      log("Escala padrão restaurada.");
-    }
-
-    function carregarExemploImportado() {
-      escala = [
-        {
-          data: "23/03/2026",
-          dia: "SEGUNDA-FEIRA",
-          funcoes: [
-            { sigla: "CG", classe: "cg", linhas: [
-              { turno: "12h dia", icone: "☀️", carga: "12h", nome: "1º SGT BM BATISTA", obs: "Importado" },
-              { turno: "12h noite", icone: "🌙", carga: "12h", nome: "1º SGT BM BATISTA", obs: "Importado" }
-            ]},
-            { sigla: "COV", classe: "cov", linhas: [
-              { turno: "12h dia", icone: "☀️", carga: "12h", nome: "2º SGT BM LISCANO", obs: "Importado" },
-              { turno: "12h noite", icone: "🌙", carga: "12h", nome: "2º SGT BM LISCANO", obs: "Importado" }
-            ]},
-            { sigla: "CLD", classe: "cld", linhas: [
-              { turno: "12h dia", icone: "☀️", carga: "12h", nome: "SD BM TOMASCHEWSKI", obs: "Importado" },
-              { turno: "12h noite", icone: "🌙", carga: "12h", nome: "SD BM TOMASCHEWSKI", obs: "Importado" }
-            ]},
-            { sigla: "CLE", classe: "cle", linhas: [
-              { turno: "12h dia", icone: "☀️", carga: "12h", nome: "SD BM ISQUIERDO", obs: "Importado" },
-              { turno: "12h noite", icone: "🌙", carga: "12h", nome: "SD BM ISQUIERDO", obs: "Importado" }
-            ]},
-            { sigla: "COBOM", classe: "cobom", linhas: [
-              { turno: "12h dia", icone: "☀️", carga: "12h", nome: "SD BM BORGES", obs: "Importado" },
-              { turno: "12h noite", icone: "🌙", carga: "12h", nome: "SD BM BORGES", obs: "Importado" }
-            ]},
-            { sigla: "EXP. ADM", classe: "exp", linhas: [
-              { turno: "Administrativo", icone: "🗂️", carga: "6h", nome: "1º SGT DIEFERSON", obs: "Importado" }
-            ]}
-          ]
-        }
-      ];
-
-      indiceAtual = 0;
-      montarSeletor();
-      renderizar();
-      log("Exemplo importado carregado no sistema.");
-    }
-
-    function baixarJSONEscala() {
-      const blob = new Blob([JSON.stringify(escala, null, 2)], { type: "application/json" });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.href = url;
-      a.download = "escala-convertida.json";
-      a.click();
-      URL.revokeObjectURL(url);
-    }
-
-    montarSeletor();
-    renderizarIndisponiveis();
-    renderizarObservacoes();
-    renderizar();
-
-    window.importarPDF = importarPDF;
-    window.restaurarEscalaPadrao = restaurarEscalaPadrao;
-    window.carregarExemploImportado = carregarExemploImportado;
-    window.baixarJSONEscala = baixarJSONEscala;
-    window.proximoDia = proximoDia;
-    window.anteriorDia = anteriorDia;
-    window.trocarDia = trocarDia;
-    window.irParaHojeEscala = irParaHojeEscala;
-  </script>
+  </div>
 </body>
 </html>

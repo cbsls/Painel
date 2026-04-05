@@ -7,12 +7,7 @@
   <meta name="theme-color" content="#0f4c81" />
 
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: Arial, Helvetica, sans-serif;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, Helvetica, sans-serif; }
 
     body {
       background: linear-gradient(135deg, #eaf2fb, #d8e7f7);
@@ -21,13 +16,10 @@
       padding: 24px;
     }
 
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
+    .container { max-width: 1100px; margin: 0 auto; }
 
     .topo {
-      background: #ffffff;
+      background: #fff;
       border-radius: 22px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.08);
       padding: 28px 22px;
@@ -35,37 +27,23 @@
       text-align: center;
     }
 
-    .topo h1 {
-      color: #0f4c81;
-      font-size: 2rem;
-      margin-bottom: 8px;
-    }
-
-    .topo h2 {
-      font-size: 1.1rem;
-      font-weight: normal;
-      color: #5b6b7b;
-      margin-bottom: 10px;
-    }
+    .topo h1 { color: #0f4c81; font-size: 2rem; }
+    .topo h2 { font-size: 1.1rem; color: #5b6b7b; }
 
     .topo p {
       color: #6b7280;
-      font-size: 0.98rem;
+      margin-top: 8px;
       line-height: 1.5;
-      max-width: 750px;
-      margin: 0 auto;
     }
 
     .info-bar {
-      margin-top: 16px;
-      display: inline-block;
+      margin-top: 14px;
       background: #edf6ff;
       color: #0f4c81;
-      border: 1px solid #cfe4ff;
       padding: 10px 16px;
       border-radius: 999px;
-      font-size: 0.95rem;
       font-weight: bold;
+      display: inline-block;
     }
 
     .grid {
@@ -75,230 +53,133 @@
     }
 
     .card {
-      background: #ffffff;
+      background: #fff;
       border-radius: 22px;
       padding: 24px;
       box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      min-height: 280px;
       border-top: 6px solid #0f4c81;
     }
 
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 16px 36px rgba(0,0,0,0.12);
-    }
+    .icon { font-size: 2.2rem; margin-bottom: 12px; }
 
-    .icon {
-      font-size: 2.4rem;
-      margin-bottom: 14px;
-    }
+    .card h3 { color: #0f4c81; margin-bottom: 10px; }
 
-    .card h3 {
-      color: #0f4c81;
-      font-size: 1.4rem;
-      margin-bottom: 10px;
-    }
+    .card p { color: #4b5563; margin-bottom: 16px; }
 
-    .card p {
-      color: #4b5563;
-      line-height: 1.6;
-      font-size: 0.98rem;
-      margin-bottom: 18px;
-    }
-
-    .tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 18px;
-    }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
 
     .tag {
       background: #eef4fb;
-      color: #234;
-      padding: 7px 12px;
+      padding: 6px 10px;
       border-radius: 999px;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       font-weight: bold;
-    }
-
-    .acoes {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-top: auto;
     }
 
     .btn {
-      text-decoration: none;
-      border: none;
-      cursor: pointer;
-      padding: 12px 16px;
-      border-radius: 12px;
-      font-size: 0.95rem;
-      font-weight: bold;
-      transition: 0.2s ease;
-      text-align: center;
-      display: inline-block;
-    }
-
-    .btn-primary {
       background: #0f4c81;
       color: white;
+      padding: 12px;
+      border-radius: 10px;
+      text-decoration: none;
+      text-align: center;
+      font-weight: bold;
     }
 
-    .btn-primary:hover {
-      background: #0b3b64;
-    }
-
-    .bloco-extra {
-      margin-top: 26px;
-      background: #ffffff;
-      border-radius: 22px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      padding: 24px;
-    }
-
-    .bloco-extra h3 {
-      color: #0f4c81;
-      margin-bottom: 14px;
-      font-size: 1.2rem;
-    }
-
-    .lista {
-      display: grid;
-      gap: 10px;
-    }
-
-    .item-lista {
-      background: #f8fbff;
-      border-left: 5px solid #0f4c81;
-      padding: 12px 14px;
-      border-radius: 12px;
-      color: #374151;
-      line-height: 1.5;
-    }
+    .btn:hover { background: #0b3b64; }
 
     .rodape {
       text-align: center;
+      margin-top: 20px;
       color: #6b7280;
-      font-size: 0.92rem;
-      padding: 22px 10px 6px;
-    }
-
-    @media (max-width: 700px) {
-      body {
-        padding: 14px;
-      }
-
-      .topo h1 {
-        font-size: 1.6rem;
-      }
-
-      .topo h2 {
-        font-size: 1rem;
-      }
-
-      .card {
-        min-height: auto;
-      }
-
-      .acoes {
-        flex-direction: column;
-      }
-
-      .btn {
-        width: 100%;
-      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
 
-    <div class="topo">
-      <h1>🚒 PAINEL CBSLS</h1>
-      <h2>📋 Menu Principal de Sistemas</h2>
-      <p>
-        Acesso rápido aos sistemas já publicados. Utilize este menu para abrir de forma mais fácil
-        o <strong>Help Desk SLS</strong> e o <strong>Controle Numérico</strong> em um único local.
-      </p>
-      <div class="info-bar">✅ Menu centralizado • ✅ Acesso rápido</div>
-    </div>
+<div class="container">
 
-    <div class="grid">
+  <div class="topo">
+    <h1>🚒 PAINEL CBSLS</h1>
+    <h2>📋 Menu Principal</h2>
+    <p>
+      Acesso rápido aos sistemas:
+      <strong>Escala de Serviço</strong>,
+      <strong>Controle Numérico</strong> e
+      <strong>Help Desk</strong>.
+    </p>
+    <div class="info-bar">✅ Centralizado • ✅ Rápido • ✅ Profissional</div>
+  </div>
 
-      <div class="card">
-        <div>
-          <div class="icon">🛠️</div>
-          <h3>Help Desk SLS</h3>
-          <p>
-            Sistema para abertura de Chamados de Manutenção,
-            Local onde podemos "Anotar" situações que necessitam de reparos.
-          </p>
+  <div class="grid">
 
-          <div class="tags">
-            <span class="tag">No Quartel</span>
-            <span class="tag">Nas VTR's</span>
-            <span class="tag">Aquisições</span>
-            <span class="tag">Sugestões</span>
-          </div>
-        </div>
+    <!-- ESCALA -->
+    <div class="card">
+      <div>
+        <div class="icon">📅</div>
+        <h3>Escala CBSLS</h3>
+        <p>Visualização da escala semanal com troca e busca de militares.</p>
 
-        <div class="acoes">
-          <a class="btn btn-primary" href="https://helpdesksls.github.io/Help-Desk-SLS/" target="_blank" rel="noopener noreferrer">
-            Abrir Help Desk
-          </a>
+        <div class="tags">
+          <span class="tag">Escala</span>
+          <span class="tag">Turnos</span>
+          <span class="tag">Trocas</span>
         </div>
       </div>
 
-      <div class="card">
-        <div>
-          <div class="icon">🔢</div>
-          <h3>Controle Numérico</h3>
-          <p>
-            Sistema para controle de numeração usada em respostas de mensagens.
-          </p>
+      <a class="btn" href="https://cbsls.github.io/escala/" target="_blank">
+        Abrir Escala
+      </a>
+    </div>
 
-          <div class="tags">
-            <span class="tag">Mensagem Expressa</span>
-            <span class="tag">Partes</span>
-            <span class="tag">Nota para BI</span>
-            <span class="tag">Outros</span>
-          </div>
-        </div>
+    <!-- CONTROLE NUMÉRICO -->
+    <div class="card">
+      <div>
+        <div class="icon">🔢</div>
+        <h3>Controle Numérico</h3>
+        <p>Controle de numeração de mensagens.</p>
 
-        <div class="acoes">
-          <a class="btn btn-primary" href="https://controle-numerico.github.io/controle-numerico/" target="_blank" rel="noopener noreferrer">
-            Abrir Controle Numérico
-          </a>
+        <div class="tags">
+          <span class="tag">Mensagens</span>
+          <span class="tag">BI</span>
+          <span class="tag">Partes</span>
         </div>
       </div>
 
+      <a class="btn" href="https://controle-numerico.github.io/controle-numerico/" target="_blank">
+        Abrir
+      </a>
     </div>
 
-    <div class="bloco-extra">
-      <h3>📌 Informações deste menu</h3>
-      <div class="lista">
-        <div class="item-lista">
-          <strong>Help Desk SLS:</strong>
-          abre diretamente o sistema de Chamados.
-        </div>
+    <!-- HELP DESK -->
+    <div class="card">
+      <div>
+        <div class="icon">🛠️</div>
+        <h3>Help Desk SLS</h3>
+        <p>Registro de chamados e manutenção.</p>
 
-        <div class="item-lista">
-          <strong>Controle Numérico:</strong>
-          abre diretamente o sistema de Controle de Numeração.
+        <div class="tags">
+          <span class="tag">Quartel</span>
+          <span class="tag">VTR</span>
+          <span class="tag">Sugestões</span>
         </div>
+      </div>
 
-       
-    <div class="rodape">
-      Desenvolvido para acesso rápido aos sistemas internos 🚒
+      <a class="btn" href="https://helpdesksls.github.io/Help-Desk-SLS/" target="_blank">
+        Abrir
+      </a>
     </div>
 
   </div>
+
+  <div class="rodape">
+    🚒 Sistema interno CBSLS • Acesso rápido
+  </div>
+
+</div>
+
 </body>
 </html>

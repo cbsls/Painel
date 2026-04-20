@@ -1,88 +1,290 @@
-<div class="grid">
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🚒 Menu CBSLS</title>
+  <meta name="theme-color" content="#0f4c81" />
 
-  <!-- CONTROLE NUMÉRICO -->
-  <div class="card">
-    <div>
-      <div class="icon">🔢</div>
-      <h3>Controle Numérico</h3>
-      <p>Controle de numeração de documentos e mensagens.</p>
-      <div class="tags">
-        <span class="tag">Mensagens</span>
-        <span class="tag">BI</span>
-        <span class="tag">Partes</span>
-      </div>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #eaf2fb, #d8e7f7);
+      color: #1f2937;
+      min-height: 100vh;
+      padding: 24px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .topo {
+      background: #fff;
+      border-radius: 22px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      padding: 28px 22px;
+      margin-bottom: 24px;
+      text-align: center;
+    }
+
+    .topo h1 {
+      color: #0f4c81;
+      font-size: 2rem;
+      margin-bottom: 6px;
+    }
+
+    .topo h2 {
+      font-size: 1.1rem;
+      color: #5b6b7b;
+      margin-bottom: 10px;
+    }
+
+    .topo p {
+      color: #6b7280;
+      margin-top: 8px;
+      line-height: 1.5;
+    }
+
+    .info-bar {
+      margin-top: 14px;
+      background: #edf6ff;
+      color: #0f4c81;
+      padding: 10px 16px;
+      border-radius: 999px;
+      font-weight: bold;
+      display: inline-block;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 22px;
+      padding: 24px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-top: 6px solid #0f4c81;
+      min-height: 250px;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 34px rgba(0,0,0,0.12);
+    }
+
+    .icon {
+      font-size: 2.2rem;
+      margin-bottom: 12px;
+    }
+
+    .card h3 {
+      color: #0f4c81;
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+    }
+
+    .card p {
+      color: #4b5563;
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .tag {
+      background: #eef4fb;
+      color: #0f4c81;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: bold;
+    }
+
+    .btn {
+      background: #0f4c81;
+      color: #fff;
+      padding: 12px;
+      border-radius: 10px;
+      text-decoration: none;
+      text-align: center;
+      font-weight: bold;
+      display: block;
+      transition: background 0.18s ease, transform 0.18s ease;
+    }
+
+    .btn:hover {
+      background: #0b3b64;
+      transform: scale(1.01);
+    }
+
+    .rodape {
+      text-align: center;
+      margin-top: 22px;
+      color: #6b7280;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 16px;
+      }
+
+      .topo {
+        padding: 22px 16px;
+      }
+
+      .topo h1 {
+        font-size: 1.7rem;
+      }
+
+      .card {
+        min-height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="topo">
+      <h1>🚒 PAINEL CBSLS</h1>
+      <h2>📋 Menu Principal</h2>
+      <p>
+        Acesso rápido aos sistemas:
+        <strong>Controle Numérico</strong>,
+        <strong>Protocolo</strong>,
+        <strong>Diário de Bordo</strong>,
+        <strong>Escala de Serviço</strong> e
+        <strong>Chamados de Manutenção</strong>.
+      </p>
+      <div class="info-bar">✅ Centralizado • ✅ Rápido • ✅ Profissional</div>
     </div>
-    <a class="btn" href="https://controle-numerico.github.io/controle-numerico/" target="_blank">
-      Abrir
-    </a>
+
+    <div class="grid">
+
+      <!-- CONTROLE NUMÉRICO -->
+      <div class="card">
+        <div>
+          <div class="icon">🔢</div>
+          <h3>Controle Numérico</h3>
+          <p>Controle de numeração de documentos e mensagens.</p>
+
+          <div class="tags">
+            <span class="tag">Mensagens</span>
+            <span class="tag">BI</span>
+            <span class="tag">Partes</span>
+          </div>
+        </div>
+
+        <a class="btn" href="https://controle-numerico.github.io/controle-numerico/" target="_blank" rel="noopener noreferrer">
+          Abrir Controle Numérico
+        </a>
+      </div>
+
+      <!-- PROTOCOLO -->
+      <div class="card">
+        <div>
+          <div class="icon">📂</div>
+          <h3>Protocolo</h3>
+          <p>Registro e controle de entrada e saída de documentos.</p>
+
+          <div class="tags">
+            <span class="tag">Documentos</span>
+            <span class="tag">Registro</span>
+            <span class="tag">Controle</span>
+          </div>
+        </div>
+
+        <a class="btn" href="https://cbsls.github.io/protocolo/" target="_blank" rel="noopener noreferrer">
+          Abrir Protocolo
+        </a>
+      </div>
+
+      <!-- DIÁRIO DE BORDO -->
+      <div class="card">
+        <div>
+          <div class="icon">🚒</div>
+          <h3>Diário de Bordo</h3>
+          <p>Registro completo de saídas, retornos, horários e KM das VTRs.</p>
+
+          <div class="tags">
+            <span class="tag">Operacional</span>
+            <span class="tag">KM</span>
+            <span class="tag">VTR</span>
+          </div>
+        </div>
+
+        <a class="btn" href="https://cbsls.github.io/diariodebordo/" target="_blank" rel="noopener noreferrer">
+          Abrir Diário de Bordo
+        </a>
+      </div>
+
+      <!-- ESCALA -->
+      <div class="card">
+        <div>
+          <div class="icon">📅</div>
+          <h3>Escala CBSLS</h3>
+          <p>Visualização da escala semanal com troca e busca de militares.</p>
+
+          <div class="tags">
+            <span class="tag">Escala</span>
+            <span class="tag">Turnos</span>
+            <span class="tag">Trocas</span>
+          </div>
+        </div>
+
+        <a class="btn" href="https://cbsls.github.io/escala/" target="_blank" rel="noopener noreferrer">
+          Abrir Escala
+        </a>
+      </div>
+
+      <!-- CHAMADOS -->
+      <div class="card">
+        <div>
+          <div class="icon">🛠️</div>
+          <h3>Chamados de Manutenção</h3>
+          <p>Registro e acompanhamento de chamados internos do quartel.</p>
+
+          <div class="tags">
+            <span class="tag">Manutenção</span>
+            <span class="tag">VTR</span>
+            <span class="tag">Infraestrutura</span>
+          </div>
+        </div>
+
+        <a class="btn" href="https://cbsls.github.io/Chamados/" target="_blank" rel="noopener noreferrer">
+          Abrir Chamados
+        </a>
+      </div>
+
+    </div>
+
+    <div class="rodape">
+      🚒 Sistema interno CBSLS • Painel integrado
+    </div>
+
   </div>
 
-  <!-- PROTOCOLO -->
-  <div class="card">
-    <div>
-      <div class="icon">📂</div>
-      <h3>Protocolo</h3>
-      <p>Registro e controle de entrada e saída de documentos.</p>
-      <div class="tags">
-        <span class="tag">Documentos</span>
-        <span class="tag">Registro</span>
-        <span class="tag">Controle</span>
-      </div>
-    </div>
-    <a class="btn" href="https://cbsls.github.io/protocolo/" target="_blank">
-      Abrir Protocolo
-    </a>
-  </div>
-
-  <!-- DIÁRIO DE BORDO -->
-  <div class="card">
-    <div>
-      <div class="icon">🚒</div>
-      <h3>Diário de Bordo</h3>
-      <p>Registro completo de saídas, retornos, horários e KM das VTRs.</p>
-      <div class="tags">
-        <span class="tag">Operacional</span>
-        <span class="tag">KM</span>
-        <span class="tag">VTR</span>
-      </div>
-    </div>
-    <a class="btn" href="https://cbsls.github.io/diariodebordo/" target="_blank">
-      Abrir Diário
-    </a>
-  </div>
-
-  <!-- ESCALA -->
-  <div class="card">
-    <div>
-      <div class="icon">📅</div>
-      <h3>Escala CBSLS</h3>
-      <p>Visualização da escala semanal com troca e busca de militares.</p>
-      <div class="tags">
-        <span class="tag">Escala</span>
-        <span class="tag">Turnos</span>
-        <span class="tag">Trocas</span>
-      </div>
-    </div>
-    <a class="btn" href="https://cbsls.github.io/escala/" target="_blank">
-      Abrir Escala
-    </a>
-  </div>
-
-  <!-- CHAMADOS (AGORA POR ÚLTIMO) -->
-  <div class="card">
-    <div>
-      <div class="icon">🛠️</div>
-      <h3>Chamados de Manutenção</h3>
-      <p>Registro e acompanhamento de chamados internos do quartel.</p>
-      <div class="tags">
-        <span class="tag">Manutenção</span>
-        <span class="tag">VTR</span>
-        <span class="tag">Infraestrutura</span>
-      </div>
-    </div>
-    <a class="btn" href="https://cbsls.github.io/Chamados/" target="_blank">
-      Abrir Chamados
-    </a>
-  </div>
-
-</div>
+</body>
+</html>

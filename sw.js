@@ -1,4 +1,4 @@
-const CACHE_NAME = "cbsls-menu-v8";
+const CACHE_NAME = "cbsls-menu-v9";
 
 const URLS_TO_CACHE = [
   "./",

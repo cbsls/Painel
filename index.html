@@ -6,7 +6,6 @@
   <title>🚒 Painel CBSLS</title>
   <meta name="theme-color" content="#0f4c81" />
 
-  <meta name="description" content="Painel de acesso rápido aos sistemas internos do CB São Lourenço do Sul." />
   <link rel="manifest" href="manifest.json" />
   <link rel="icon" href="icon-192.png" />
   <link rel="apple-touch-icon" href="icon-192.png" />
@@ -81,13 +80,17 @@
       border-radius: 22px;
       padding: 24px;
       box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+      border-top: 6px solid #0f4c81;
+
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
-      border-top: 6px solid #0f4c81;
+      height: 100%;
       min-height: 260px;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      overflow: hidden;
+    }
+
+    .card-content {
+      display: flex;
+      flex-direction: column;
     }
 
     .card:hover {
@@ -112,7 +115,7 @@
       line-height: 1.5;
     }
 
-    .card p.alerta {
+    .alerta {
       font-size: 0.85rem;
       color: #b71c1c;
       font-weight: 700;
@@ -120,7 +123,6 @@
       padding: 8px 12px;
       border-radius: 10px;
       display: inline-block;
-      margin-bottom: 16px;
     }
 
     .badge {
@@ -133,15 +135,13 @@
       padding: 6px 12px;
       border-radius: 999px;
       font-weight: bold;
-      box-shadow: 0 5px 14px rgba(0,0,0,0.22);
       animation: pulse 1.8s infinite;
-      z-index: 2;
     }
 
     @keyframes pulse {
-      0% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.08); opacity: 0.85; }
-      100% { transform: scale(1); opacity: 1; }
+      0% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+      100% { transform: scale(1); }
     }
 
     .tags {
@@ -161,17 +161,16 @@
     }
 
     .btn {
+      margin-top: auto;
       background: #0f4c81;
       color: #fff;
-      padding: 14px 12px;
+      padding: 14px;
       border-radius: 12px;
       text-decoration: none;
       text-align: center;
       font-weight: bold;
       display: block;
-      margin-top: auto;
       width: 100%;
-      box-shadow: 0 6px 14px rgba(15,76,129,0.22);
     }
 
     .btn:hover {
@@ -197,38 +196,8 @@
     }
 
     @media (max-width: 600px) {
-      body {
-        padding: 16px;
-      }
-
-      .topo {
-        padding: 24px 18px;
-        margin-bottom: 22px;
-      }
-
-      .topo h1 {
-        font-size: 1.65rem;
-      }
-
       .grid {
         grid-template-columns: 1fr;
-        gap: 22px;
-      }
-
-      .card {
-        min-height: auto;
-        padding: 22px;
-      }
-
-      .badge {
-        top: 12px;
-        right: 12px;
-      }
-
-      .rodape {
-        flex-direction: column;
-        text-align: center;
-        align-items: center;
       }
     }
   </style>
@@ -243,20 +212,16 @@
     <h2>📋 Menu Principal</h2>
     <p>
       Acesso rápido aos sistemas:
-      <strong>Controle Numérico</strong>,
-      <strong>Protocolo</strong>,
-      <strong>Diário de Bordo</strong>,
-      <strong>Checklist</strong>,
-      <strong>Escala</strong> e
-      <strong>Chamados</strong>.
+      Controle Numérico, Protocolo, Diário de Bordo, Checklist, Escala e Chamados.
     </p>
     <div class="info-bar">✅ Centralizado • ✅ Rápido</div>
   </div>
 
   <div class="grid">
 
+    <!-- CARD PADRÃO -->
     <div class="card">
-      <div>
+      <div class="card-content">
         <div class="icon">🔢</div>
         <h3>Controle Numérico</h3>
         <p>Controle de numeração de documentos e mensagens.</p>
@@ -266,11 +231,11 @@
           <span class="tag">Partes</span>
         </div>
       </div>
-      <a class="btn" href="https://cbsls.github.io/controle-numerico/" target="_blank" rel="noopener noreferrer">Abrir</a>
+      <a class="btn" href="https://cbsls.github.io/controle-numerico/" target="_blank">Abrir</a>
     </div>
 
     <div class="card">
-      <div>
+      <div class="card-content">
         <div class="icon">📂</div>
         <h3>Protocolo</h3>
         <p>Registro de entrada e saída de documentos.</p>
@@ -279,29 +244,29 @@
           <span class="tag">Controle</span>
         </div>
       </div>
-      <a class="btn" href="https://cbsls.github.io/protocolo/" target="_blank" rel="noopener noreferrer">Abrir</a>
+      <a class="btn" href="https://cbsls.github.io/protocolo/" target="_blank">Abrir</a>
     </div>
 
     <div class="card">
-      <div>
+      <div class="card-content">
         <div class="icon">🚒</div>
         <h3>Diário de Bordo</h3>
-        <p>Registro completo de saídas, retornos, horários e KM das VTRs.</p>
+        <p>Registro completo de saídas e KM das VTRs.</p>
         <div class="tags">
           <span class="tag">Operacional</span>
           <span class="tag">KM</span>
           <span class="tag">VTR</span>
         </div>
       </div>
-      <a class="btn" href="https://cbsls.github.io/diariodebordo/" target="_blank" rel="noopener noreferrer">Abrir</a>
+      <a class="btn" href="https://cbsls.github.io/diariodebordo/" target="_blank">Abrir</a>
     </div>
 
     <div class="card">
-      <div>
+      <div class="card-content">
         <div class="badge">PROTÓTIPO</div>
         <div class="icon">✅</div>
         <h3>Checklist Operacional</h3>
-        <p>Conferência de materiais e equipamentos das VTRs.</p>
+        <p>Conferência de materiais das VTRs.</p>
         <p class="alerta">⚠️ Protótipo - Fase de Testes</p>
         <div class="tags">
           <span class="tag">Conferência</span>
@@ -309,15 +274,15 @@
           <span class="tag">VTR</span>
         </div>
       </div>
-      <a class="btn" href="https://cbsls.github.io/checklist/" target="_blank" rel="noopener noreferrer">Abrir</a>
+      <a class="btn" href="https://cbsls.github.io/checklist/" target="_blank">Abrir</a>
     </div>
 
     <div class="card">
-      <div>
+      <div class="card-content">
         <div class="badge">PROTÓTIPO</div>
         <div class="icon">📅</div>
         <h3>Escala CBSLS</h3>
-        <p>Visualização da escala semanal com troca e busca de militares.</p>
+        <p>Visualização da escala semanal.</p>
         <p class="alerta">⚠️ Protótipo - Fase de Testes</p>
         <div class="tags">
           <span class="tag">Escala</span>
@@ -325,30 +290,29 @@
           <span class="tag">Trocas</span>
         </div>
       </div>
-      <a class="btn" href="https://cbsls.github.io/escala/" target="_blank" rel="noopener noreferrer">Abrir</a>
+      <a class="btn" href="https://cbsls.github.io/escala/" target="_blank">Abrir</a>
     </div>
 
     <div class="card">
-      <div>
+      <div class="card-content">
         <div class="badge">PROTÓTIPO</div>
         <div class="icon">🛠️</div>
-        <h3>Chamados de Manutenção</h3>
-        <p>Registro e acompanhamento de chamados internos do quartel.</p>
+        <h3>Chamados</h3>
+        <p>Registro de chamados internos.</p>
         <p class="alerta">⚠️ Protótipo - Fase de Testes</p>
         <div class="tags">
           <span class="tag">Manutenção</span>
-          <span class="tag">VTR</span>
           <span class="tag">Infraestrutura</span>
         </div>
       </div>
-      <a class="btn" href="https://cbsls.github.io/Chamados/" target="_blank" rel="noopener noreferrer">Abrir</a>
+      <a class="btn" href="https://cbsls.github.io/Chamados/" target="_blank">Abrir</a>
     </div>
 
   </div>
 
   <div class="rodape">
-    <div>🚒 Sistema interno CBSLS • Painel integrado</div>
-    <div class="versao">Versão 1.0.1</div>
+    <div>🚒 Sistema interno CBSLS</div>
+    <div class="versao">Versão 1.0.2</div>
     <div>Atualizado: 24/04/2026</div>
   </div>
 
